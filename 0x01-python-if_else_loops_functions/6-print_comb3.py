@@ -3,9 +3,9 @@
 for i in range(0, 10):
     for j in range(0, 10):
         if (i != j and i < j):
-            print(f"{i}{j}", end='')
+            print("{}{}".format(i, j), end='')
             if (i + j != 17):
-                print(", ", end='')
+                print(", ".format(), end='')
         j += j
     i += i
-print("")
+print("".format())
