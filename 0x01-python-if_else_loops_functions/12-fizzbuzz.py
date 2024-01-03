@@ -16,4 +16,4 @@ def fizzbuzz():
         else:
             print("")
 
-        return 0
+    return 0
