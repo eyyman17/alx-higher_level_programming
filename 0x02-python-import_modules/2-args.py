@@ -8,5 +8,5 @@ if __name__ == "__main__":
         print("0 arguments.")
     else:
         print(f"{argc} arguments:")
-    for i in range(1, argc + 1):
-        print(f"{i}: {sys.argv[i]}")
+        for i in range(1, argc + 1):
+            print(f"{i}: {sys.argv[i]}")
