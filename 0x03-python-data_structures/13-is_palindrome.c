@@ -9,7 +9,7 @@
  * Return: the address of the new element, or NULL if failed
  **/
 
-listint_t *add_nodeint(listint_t **head, const int n)
+listint_t *add_nodeint(listint_t **head,const int n)
 {
 	listint_t *new;
 
@@ -36,7 +36,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptr = *head, *temp, *head2 = NULL, *new = NULL;
-	int r = 5;
+	int r = 1;
 
 	temp = ptr;
 	while (ptr != NULL)
@@ -61,7 +61,7 @@ int is_palindrome(listint_t **head)
 		head2 = head2->next;
 	}
 
-	free_listint(new);
+	free_listint(head2);
 
 	return (r);
 }
