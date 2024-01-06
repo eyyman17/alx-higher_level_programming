@@ -48,5 +48,8 @@ int is_palindrome(listint_t **head)
 		if (ptr->n != head2->n)
 			return (0);
 	}
+
+	free_listint(head2)
+
 	return (1);
 }
