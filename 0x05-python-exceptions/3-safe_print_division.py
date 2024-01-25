@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-def safe_print_division(a, b): 
+def safe_print_division(a, b):
     try:
         r = 0
         r = a / b
@@ -8,7 +8,7 @@ def safe_print_division(a, b):
         r = None
         return None
     finally:
-        if r == None:
+        if r is None:
             print("Inside result: None")
             return None
         else:
