@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-""" 2. Area and Perimeter """
+""" 3. String representation """
 
 
 class Rectangle:
@@ -48,3 +48,14 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__width + self.__height)
+
+    def __str__(self):
+        rectangle_as_str = ""
+        if self.__height == 0 or self.__width == 0:
+            return rectangle_as_str
+         for i in range(self.__height):
+            for j in range(self.__width):
+                rectangle_as_str += '#'
+            if i != self.__height - 1:
+                rectangle_as_str += '\n'
+        return f"{rectangle_as_str}"
