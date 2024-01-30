@@ -53,7 +53,7 @@ class Rectangle:
         rectangle_as_str = ""
         if self.__height == 0 or self.__width == 0:
             return rectangle_as_str
-         for i in range(self.__height):
+        for i in range(self.__height):
             for j in range(self.__width):
                 rectangle_as_str += '#'
             if i != self.__height - 1:
