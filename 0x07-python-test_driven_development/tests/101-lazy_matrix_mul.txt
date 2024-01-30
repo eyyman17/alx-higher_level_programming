@@ -1,0 +1,58 @@
+``101-lazy_matrix_mul`` module
+===============================
+using ``lazy_matrix_mul``
+===============================
+
+``lazy_matrix_mul()``  multiplies 2 matrices
+
+Import:
+
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+	
+Tests:
+
+	>>> lazy_matrix_mul([[1, 5]], [[1, 4], [5, 10]])
+	array([[26, 54]])
+
+	>>> matrix_A = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_B = [[7, 8], [9, 10], [11, 12]]
+	>>> lazy_matrix_mul(matrix_A, matrix_B)
+	array([[ 58,  64],
+	       [139, 154]])
+
+	>>> matrix_C = [[2, 3], [4, 5], [6, 7]]
+	>>> matrix_D = [[1, 2, 3], [4, 5, 6]]
+	>>> lazy_matrix_mul(matrix_C, matrix_D)
+	array([[14, 19, 24],
+               [24, 33, 42],
+               [34, 47, 60]])
+
+	>>> matrix_E = [[1, 2, 3]]
+	>>> matrix_F = [[4], [5], [6]]
+	>>> lazy_matrix_mul(matrix_E, matrix_F)
+	array([[32]])
+
+	>>> matrix_G = [[1, 2], [3, 4]]
+	>>> matrix_H = [[5, 6], [7, 8]]
+	>>> lazy_matrix_mul(matrix_G, matrix_H)
+	array([[19, 22],
+	       [43, 50]])
+
+	>>> matrix_I = [[1]]
+	>>> matrix_J = [[2]]
+	>>> lazy_matrix_mul(matrix_I, matrix_J)
+	array([[2]])
+
+	>>> matrix_K = [[]]
+	>>> matrix_L = [[1], [2], [3]]
+	>>> lazy_matrix_mul(matrix_K, matrix_L)
+	Traceback (most recent call last):
+		...
+	ValueError: shapes (1,0) and (3,1) not aligned: 0 (dim 1) != 3 (dim 0)
+
+	>>> matrix_M = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_N = [[7, 8], [9, 10]]
+	>>> lazy_matrix_mul(matrix_M, matrix_N)
+	Traceback (most recent call last):
+		...
+	ValueError: shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
