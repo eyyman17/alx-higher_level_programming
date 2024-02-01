@@ -1,10 +1,11 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 
 """
 2. Say my name module
 
 
 """
+
 
 def say_my_name(first_name, last_name=""):
     """
