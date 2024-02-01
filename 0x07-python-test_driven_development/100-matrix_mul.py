@@ -5,21 +5,21 @@
 
 def matrix_mul(m_a, m_b):
     """ This is the matrix multplication function """
-    
-    #Raising Errors:
+
+    # Raising Errors:
 
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
-        raise TypeError("b_a must be a list")
+        raise TypeError("m_b must be a list")
     if not all(isinstance(x, list) for x in m_a):
         raise TypeError("m_a must be a list of lists")
     if not all(isinstance(x, list) for x in m_b):
-        raise TypeError("b_a must be a list of lists")
+        raise TypeError("m_b must be a list of lists")
     if m_a == [] or m_a == [[]]:
         raise ValueError("m_a can't be empty")
     if m_b == [] or m_b == [[]]:
-        raise ValueError("b_a can't be empty")
+        raise ValueError("m_b can't be empty")
     for item in m_a:
         if not all(isinstance(x, (int, float)) for x in item):
             raise TypeError("m_a should contain only integers or floats")
@@ -39,7 +39,7 @@ def matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError("m_a and m_b can't be multiplied")
 
-    #Matrix multiplication:
+    # Matrix multiplication:
 
     new_matrix = [[0 for _ in range(len(m_b[0]))] for _ in range(len(m_a))]
     for i in range(len(m_a)):
