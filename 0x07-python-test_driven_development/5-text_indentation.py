@@ -6,9 +6,11 @@
 
 """
 
+
 def text_indentation(text):
     """
-     a function that prints a text with 2 new lines after each of these characters: ., ? and :
+    a function that prints a text with 2 new lines
+    after each of these characters: ., ? and :
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
@@ -22,8 +24,7 @@ def text_indentation(text):
     while i < limit:
         if text[i] in ['.', '?', ':']:
             print(f"{text[i]}\n")
-            if i + 1 < len(text) - 1:
-                if text[i + 1] == ' ':
+            if text[i + 1] == ' ':
                     i += 1
         else:
             print(text[i], end="")
