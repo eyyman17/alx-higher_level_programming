@@ -6,10 +6,9 @@
 
 """
 
+
 def matrix_divided(matrix, div):
-    """
-    Function that divides all elements of a matrix.
-    """
+    """ Function that divides all elements of a matrix. """
 
     if not all(isinstance(item, (int, float)) for item in matrix) and not isinstance(matrix, list):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
