@@ -1,15 +1,15 @@
 #!/usr/bin/python3
 
-""" 
-0. Integers addition 
+"""
+0. Integers addition
 
 
 """
 
 
 def add_integer(a, b=98):
-    """ 
-    a function that adds 2 integers. 
+    """
+    a function that adds 2 integers.
     """
 
     if type(a) not in [int, float]:
