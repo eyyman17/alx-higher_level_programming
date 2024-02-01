@@ -24,7 +24,8 @@ def text_indentation(text):
     while i < limit:
         if text[i] in ['.', '?', ':']:
             print(f"{text[i]}\n")
-            if text[i + 1] == ' ':
+            if i + 1 < len(text) - 1:
+                if text[i + 1] == ' ':
                     i += 1
         else:
             print(text[i], end="")
