@@ -3,7 +3,7 @@
 """ My list Module """
 
 
-class MyList:
+class MyList(list):
     """ MyList class """
 
     def print_sorted(self):
