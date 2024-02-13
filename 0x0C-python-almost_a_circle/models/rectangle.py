@@ -52,6 +52,9 @@ class Rectangle(Base):
         self.setter_valid("y", value)
         self.__y = value
 
+    def area(self):
+        return self.__width * self.__height
+
     @staticmethod
     def setter_valid(attribute, value):
         """ function that checks if attribute in the setter is valid """
@@ -62,6 +65,3 @@ class Rectangle(Base):
                 raise ValueError(f"{attribute} must be >= 0")
         elif value <= 0:
             raise ValueError(f"{attribute} must be > 0")
-
-    def area(self):
-        return self.__width * self.__height
