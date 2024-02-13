@@ -26,6 +26,21 @@ class Base:
         else:
             return json.dumps(list_dictionaries)
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ From JSON string """
+        if json_string is None or len(json_string) == "[]":
+            return []
+        else:
+            return json.loads(json_string)
+    
+    @classmethod
+    def create(cls, **dictionary):
+        """ CREATE """
+        cre = cls.__new__(cls)
+        cre.update(**dictionary)
+        return cre
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """ save to file cvs """
