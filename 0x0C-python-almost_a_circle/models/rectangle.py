@@ -49,5 +49,20 @@ class Rectangle(Base):
 
     @y.setter
     def y(self, value):
-        self.setter_validation("y", value)
+        self.setter_valid("y", value)
         self.__y = value
+
+
+
+
+
+    @staticmethod
+    def setter_valid(attribute, value):
+        if type(value) is not int:
+            raise TypeError(f"{attribute} must be an integer")
+        if attribute == "x" or attribute == "y":
+            if value < 0:
+                raise TypeError(f"{value} must be >= 0")
+        elif:
+            if value <= 0:
+                raise TypeError(f"{value} must be > 0")
