@@ -62,3 +62,6 @@ class Rectangle(Base):
                 raise ValueError(f"{attribute} must be >= 0")
         elif value <= 0:
             raise ValueError(f"{attribute} must be > 0")
+
+    def area(self):
+        return self.__width * self.__height
