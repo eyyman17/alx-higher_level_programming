@@ -42,6 +42,18 @@ class Base:
         return cre
 
     @classmethod
+    def load_from_file(cls):
+        """Return a list of classes instantiated from a file of JSON  string.
+        """
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
+
+    @classmethod
     def save_to_file_csv(cls, list_objs):
         """ save to file cvs """
         dict_list = []
@@ -49,7 +61,7 @@ class Base:
         with open(file_name, "w", encoding='utf-8') as f:
             if list_objs is None or len(list_objs) == 0:
                 return
-            write = cvs.writer(f)
+            write = csv.writer(f)
             write.wrtierow(list(vars(list_objs[0]).keys()))
             for obj in list_objs:
                 write.writerow(list(obj.to_dictionary().values()))
