@@ -24,7 +24,7 @@ class Base:
             return json.dumps(list_dictionaries)
 
     @classmethod
-    def save_to_file_cvs(cls, list_objs):
+    def save_to_file_csv(cls, list_objs):
         """ save to file cvs """
         dict_list = []
         file_name = cls.__name__ + ".csv"
