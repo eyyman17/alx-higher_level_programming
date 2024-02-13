@@ -59,6 +59,6 @@ class Rectangle(Base):
             raise TypeError(f"{attribute} must be an integer")
         if attribute == "x" or attribute == "y":
             if value < 0:
-                raise TypeError(f"{value} must be >= 0")
+                raise ValueError(f"{attribute} must be >= 0")
         elif value <= 0:
-            raise TypeError(f"{value} must be > 0")
+            raise ValueError(f"{attribute} must be > 0")
