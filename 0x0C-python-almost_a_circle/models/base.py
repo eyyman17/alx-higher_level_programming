@@ -2,6 +2,9 @@
 
 """ BASE CLASS MODULE """
 
+import json
+import csv
+
 
 class Base:
     """ the Base Class """
