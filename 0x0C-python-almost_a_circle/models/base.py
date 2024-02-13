@@ -62,23 +62,31 @@ class Base:
             if list_objs is None or len(list_objs) == 0:
                 return
             write = csv.writer(f)
-            write.wrtierow(list(vars(list_objs[0]).keys()))
+            write.writerow(list(vars(list_objs[0]).keys()))
             for obj in list_objs:
                 write.writerow(list(obj.to_dictionary().values()))
 
     @classmethod
     def load_from_file_csv(cls):
-        """ load from file csv """
+        """ this """
+        from pathlib import Path
+        l_instance = []
         filename = cls.__name__ + ".csv"
-        try:
-            with open(filename, "r", newline="") as csvfile:
-                if cls.__name__ == "Rectangle":
-                    fieldnames = ["id", "width", "height", "x", "y"]
-                else:
-                    fieldnames = ["id", "size", "x", "y"]
-                list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
-                list_dicts = [dict([k, int(v)] for k, v in d.items())
-                              for d in list_dicts]
-                return [cls.create(**d) for d in list_dicts]
-        except IOError:
-            return []
+        path = Path(filename)
+        if not path.is_file():
+            return l_instance
+        else:
+            with open(filename, encoding='utf-8', newline='') as f:
+                reader = csv.reader(f)
+                header = next(reader)
+                rows = []
+                for row in reader:
+                    rows.append(row)
+                for row in rows:
+                    dict_rep = {}
+                    obj = None
+                    for i in range(len(rows[0])):
+                        dict_rep[header[i]] = row[i]
+                    obj = cls.create(**dict_rep)
+                    l_instance.append(obj)
+        return l_instance
