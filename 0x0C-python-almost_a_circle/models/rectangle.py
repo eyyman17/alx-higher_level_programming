@@ -52,7 +52,6 @@ class Rectangle(Base):
         self.setter_valid("y", value)
         self.__y = value
 
-
     @staticmethod
     def setter_valid(attribute, value):
         """ function that checks if attribute in the setter is valid """
