@@ -52,10 +52,6 @@ class Rectangle(Base):
         self.setter_valid("y", value)
         self.__y = value
 
-    def area(self):
-        """ function that returns area of the triangle """
-        return (self.width * self.height)
-
     @staticmethod
     def setter_valid(attribute, value):
         """ function that checks if attribute in the setter is valid """
@@ -66,3 +62,19 @@ class Rectangle(Base):
                 raise ValueError(f"{attribute} must be >= 0")
         elif value <= 0:
             raise ValueError(f"{attribute} must be > 0")
+
+    def area(self):
+        """ function that returns area of the Rectangle """
+        return (self.__width * self.__height)
+
+    def display(self):
+        """ Displays the Rectangle with "#" """
+        for i in range(self.__y):
+            print("")
+        for i in range(self.__height):
+            for k in range(self.__x):
+                print(" ", end="")
+            for k in range(self.__width):
+                print("#", end="")
+            print("")
+
