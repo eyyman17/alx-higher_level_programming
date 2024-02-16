@@ -42,7 +42,7 @@ class Base:
                 created = cls(1, 1)
             else:
                 created = cls(1)
-            new.update(**dictionary)
+            created.update(**dictionary)
             return created
 
     @classmethod
