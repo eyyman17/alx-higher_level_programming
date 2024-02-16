@@ -70,20 +70,21 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ save to file cvs """
-        dict_list = []
         file_name = cls.__name__ + ".csv"
-        with open(file_name, "w", encoding='utf-8') as f:
+        with open(file_name, "w", newline='', encoding='utf-8') as f:
             if list_objs is None or len(list_objs) == 0:
                 return
             write = csv.writer(f)
-            write.writerow(list(vars(list_objs[0]).keys()))
+            if isinstance(list_objs[0], Rectangle):
+                header = ['id', 'width', 'height', 'x', 'y']
+            elif isinstance(list_objs[0], Square):
+                header = ['id', 'size', 'x', 'y']
+            write.writerow(header)
             for obj in list_objs:
-                write.writerow(list(obj.to_dictionary().values()))
+                write.writerow(obj.to_csv())
 
     @classmethod
     def load_from_file_csv(cls):
-        """ this """
         from pathlib import Path
         l_instance = []
         filename = cls.__name__ + ".csv"
@@ -94,7 +95,6 @@ class Base:
             with open(filename, encoding='utf-8', newline='') as f:
                 reader = csv.reader(f)
                 header = next(reader)
-                rows = []
                 for row in reader:
                     dict_rep = {key: value for key, value in zip(header, row)}
                     obj = cls.create(**dict_rep)
