@@ -85,12 +85,7 @@ class Base:
                 header = next(reader)
                 rows = []
                 for row in reader:
-                    rows.append(row)
-                for row in rows:
-                    dict_rep = {}
-                    obj = None
-                    for i in range(len(rows[0])):
-                        dict_rep[header[i]] = row[i]
+                    dict_rep = {key: value for key, value in zip(header, row)}
                     obj = cls.create(**dict_rep)
                     l_instance.append(obj)
         return l_instance
