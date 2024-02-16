@@ -44,6 +44,7 @@ class Base:
                 created = cls(1)
             created.update(**dictionary)
             return created
+
     @classmethod
     def save_to_file(cls, list_objs):
         """ Save list object to JSON """
