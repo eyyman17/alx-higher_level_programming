@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-""" 2-is_same_class module """
+""" This is the 2-is_same_class module """
 
 
 def is_same_class(obj, a_class):
