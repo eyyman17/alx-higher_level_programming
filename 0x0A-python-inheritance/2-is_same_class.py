@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-
-""" Exact same object Module """
+""" This is the 2-is_same_class module """
 
 
 def is_same_class(obj, a_class):
-    """ returns True if the object is exactly an instance of a class """
-    if obj isinstance(a_class):
+    """ This is the is_same_class function """
+    if type(obj) is a_class:
         return True
-    else:
-        return False
+    return False
